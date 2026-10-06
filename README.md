@@ -2,8 +2,6 @@
 
 **A Streamlit web app that estimates your risk of heart disease from 13 clinical inputs.**
 
-Built and maintained by **[Iyinoluwa Don-Taiwo](https://github.com/IyinoluwaDon)**.
-
 The model is a K-Nearest Neighbors classifier (k = 7, min-max scaling) trained on the UCI Cleveland heart disease dataset (`heart.csv`, 303 records). It reaches about **90% accuracy** on a held-out 20% test split.
 
 > **Disclaimer:** This is an educational project. It is not medical advice. See a doctor if you have symptoms or concerns.
@@ -55,20 +53,3 @@ Cardio-Monitor/
 3. The model returns a class (1 = low risk, 0 = high risk) and the share of neighbors that voted low risk.
 4. Streamlit caches the trained model, so predictions are instant after the first load.
 
-## What changed from the original Flask version
-
-- Moved the whole interface from Flask and HTML templates to Streamlit
-- Removed MongoDB, the hit counters, and all stored user data
-- Removed the pickled model files, which break on current scikit-learn. The model now trains from the CSV at startup
-- Fixed sex encoding. The old code sent `Male` but checked for `male`, so every user was scored as female
-- Fixed the `thal` encoding so it matches the dataset (1 fixed, 2 normal, 3 reversible)
-- Fixed the chest pain mismatch between the prediction and chart code
-- Relabeled the chart baseline as the typical low-risk value. The old "Normal Value" was actually the high-risk group average
-
-## Credits and license
-
-Copyright (c) 2026 Iyinoluwa Don-Taiwo, Streamlit edition.
-
-This project is a derivative of the original Flask app [Cardio-Monitor](https://github.com/shsarv/Cardio-Monitor) by Sarvesh Kumar Sharma, created as a Big Data Analytics course project. The EDA notebooks in `heart disease prediction/` come from that original work. See [LICENSE](LICENSE).
-
-Dataset: UCI Heart Disease (Cleveland).
