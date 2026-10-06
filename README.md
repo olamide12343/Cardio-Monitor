@@ -17,7 +17,7 @@ The model is a K-Nearest Neighbors classifier (k = 7, min-max scaling) trained o
 ## Run it locally
 
 ```bash
-git clone https://github.com/IyinoluwaDon/Cardio-Monitor.git
+git clone https://github.com/olamide12343/Cardio-Monitor.git
 cd Cardio-Monitor
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
